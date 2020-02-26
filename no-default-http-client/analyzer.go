@@ -10,7 +10,8 @@ import (
 )
 
 var Analyzer = &analysis.Analyzer{
-	Name: "no-default-http-client",
+	Name: "noDefaultHttpClient",
+	Doc:  "noDefaultHttpClient restrict to use net/http.DefaultClient",
 	Run:  run,
 	Requires: []*analysis.Analyzer{
 		inspect.Analyzer,

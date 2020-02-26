@@ -3,7 +3,7 @@ package main
 import (
 	noDefaultClient "github.com/wreulicke/http-timeout/no-default-http-client"
 	noDefaultServer "github.com/wreulicke/http-timeout/no-default-http-server"
-	noTimeoutClient "github.com/wreulicke/http-timeout/no-timeout-http-server"
+	noTimeoutClient "github.com/wreulicke/http-timeout/no-timeout-http-client"
 	noTimeoutServer "github.com/wreulicke/http-timeout/no-timeout-http-server"
 
 	"golang.org/x/tools/go/analysis/multichecker"

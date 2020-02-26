@@ -10,7 +10,8 @@ import (
 )
 
 var Analyzer = &analysis.Analyzer{
-	Name: "no-timeout-http-server",
+	Name: "noTimeoutHttpServer",
+	Doc:  "noTimeoutHttpServer restrict to use net/http.Server without timeout",
 	Run:  run,
 	Requires: []*analysis.Analyzer{
 		inspect.Analyzer,

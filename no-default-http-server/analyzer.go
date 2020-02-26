@@ -10,7 +10,8 @@ import (
 )
 
 var Analyzer = &analysis.Analyzer{
-	Name: "no-default-http-server",
+	Name: "noDefaultHttpServer",
+	Doc:  "noDefaultHttpServer restrict to use net/http default server",
 	Run:  run,
 	Requires: []*analysis.Analyzer{
 		inspect.Analyzer,
