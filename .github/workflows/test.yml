@@ -1,10 +1,9 @@
-name: Release
+name: Test
 on:
   push:
     branches:
-      - "!*"
-    tags:
-      - "v*"
+      - master
+  pull_request:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,7 +11,7 @@ jobs:
       matrix:
         go:
           - 1.22.2
-    name: GoReleaser
+    name: test
     steps:
       - uses: actions/checkout@master
       - name: Setup Go
@@ -21,7 +20,5 @@ jobs:
           go-version: ${{ matrix.go }}
       - name: Run go mod download
         run: go mod download
-      - name: Run GoReleaser
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: curl -sL https://git.io/goreleaser | bash
+      - name: Run tests
+        run: go test ./...
