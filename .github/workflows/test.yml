@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Setup Go
-        uses: actions/setup-go@v1
+        uses: actions/setup-go@v5
         with:
           go-version: ${{ matrix.go }}
       - name: Run go mod download
