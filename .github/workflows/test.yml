@@ -1,0 +1,24 @@
+name: Release
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go:
+          - 1.22.2
+    name: test
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: ${{ matrix.go }}
+      - name: Run go mod download
+        run: go mod download
+      - name: Run tests
+        run: go test ./...
